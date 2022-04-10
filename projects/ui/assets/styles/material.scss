@@ -1,0 +1,81 @@
+@import './variables';
+/*Grid Tile*/
+
+mat-grid-tile {
+    background-color: $lv-background-color;
+    color: $mdc-theme-primary-dark;
+    font-family: $lv-default-font-family; //border: 1 solid;
+}
+
+::ng-deep .mat-grid-tile-content {
+    display: block !important;
+}
+
+mat-form-field {
+    width: 100%;
+    appearance: outline;
+}
+
+// Remove padding on bottom of mat field
+::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+}
+
+/* Table */
+
+mat-row:hover {
+    background-color: lighten($color: $lv-default-color, $amount: 20);
+}
+
+mat-column-select {
+    overflow: initial;
+}
+
+mat-mini-fab {
+    background-color: $mdc-theme-primary;
+}
+
+mat-header-row {
+    top: 0;
+    position: sticky;
+    position: -webkit-sticky;
+    background-color: darken($color:$mdc-theme-primary-light, $amount: 10);
+}
+
+mat-header-cell {
+    color: $lv-primary-color !important;
+    text-transform: uppercase; //border: solid 0.5px;
+}
+
+mat-list-item:hover {
+    background-color: $lv-primary-color !important; //color: $lv-link-hover-color !important;
+    color: $lv-link-hover-color !important;
+}
+
+mat-menu {
+    border-radius: 0 !important;
+}
+
+mat-dialog-container {
+    padding: 5px 5px;
+}
+
+mat-expansion-panel-header {
+    text-transform: capitalize;
+}
+
+button {
+    text-transform: uppercase;
+}
+
+mat-chip {
+    min-width: 100px !important;
+    max-width: 200px;
+}
+
+@media(max-width: $lv-mobile-break-point) {
+    mat-table {
+        overflow: auto;
+        // max-height: calc($lv-default-table-height - 35px);
+    }
+}

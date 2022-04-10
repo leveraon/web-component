@@ -1,0 +1,55 @@
+//Variables
+/*Oryx System Color Variables*/
+$mdc-theme-primary: #000000;
+$mdc-theme-secondary: #3B444B;
+$mdc-theme-background: #9E9E9E;
+$mdc-theme-primary-light: #A7ADBA;
+$mdc-theme-primary-dark: #607D8B;
+$mdc-theme-secondary-light: #C0C5CE;
+$mdc-theme-secondary-dark: #000000;
+
+/*Oryx Font Variables*/
+$lv-primary-color: #343D46;
+$lv-secondary-color: #4F5B66;
+$lv-default-color: #C0C5CE;
+$lv-link-hover-color: #FFF;
+$lv-indigo-color: #283593;
+$lv-background-color: #FFF;
+$lv-default-font-color: #000;
+$lv-default-font-size: 14px;
+$lv-menu-font-size: 12px;
+$lv-footer-font-size: 10px;
+$lv-default-font-family: 'Lucida Sans',
+'Lucida Sans Regular',
+'Lucida Grande',
+'Lucida Sans Unicode',
+Geneva,
+Verdana,
+sans-serif;
+
+/*Oryx Button Variables*/
+$lv-btn-default-width: 12em;
+$lv-btn-mobile-width: 7.5em;
+$lv-btn-login-width: 18em;
+$lv-sidebar-width:20em;
+$lv-toolbar-height:3.75em;
+$lv-main-content-margin-top: calc( $lv-toolbar-height + 0.25em );
+
+//Default Table Height
+$lv-default-table-height: 35em;
+$lv-default-table-header-height: 45px;
+$lv-default-table-row-height: 42px;
+
+/*Oryx Text Variables*/
+
+$lv-input-text-default-width: 17.825em;
+/*Global Settings*/
+$lv-mobile-break-point: 48em;
+$lv-default-screen-size: 64em;
+$lv-default-navbar-height: 4em;
+$lv-default-footer-height: 2em;
+
+
+
+/**Oryx Icon*/
+$lv-default-icon-path: '../images/oryx.svg';

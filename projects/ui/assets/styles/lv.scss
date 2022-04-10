@@ -1,0 +1,645 @@
+@import './variables';
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+th {
+  background-color: darken($color:$mdc-theme-primary-light, $amount: 10);
+  text-transform: uppercase;
+}
+
+tr:hover {
+  background-color: lighten($color: $lv-default-color, $amount: 20);
+}
+
+tr.mat-header-row {
+  height: $lv-default-table-header-height !important;
+}
+
+tr.mat-row {
+  height: $lv-default-table-row-height !important;
+}
+
+a {
+  color: $lv-primary-color;
+}
+
+/*Container*/
+
+.lv-main-container {
+  margin: 0;
+  padding: 0;
+  background-color: $mdc-theme-primary-light;
+  height: 100%;
+}
+
+.lv-main-content {
+  margin: 5px;
+  background-color: $mdc-theme-secondary-light !important;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - #{$lv-default-navbar-height} - #{$lv-default-footer-height});
+}
+
+.lv-main-content__dashboard {
+  margin: 5px;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - #{$lv-default-navbar-height} - #{$lv-default-footer-height});
+}
+
+
+.lv-default-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $mdc-theme-secondary-light;
+}
+
+.lv-header-image {
+  // background-image: url('~/assets/images/oryx.svg');
+  margin-top: 10px;
+  background-size: 35%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80px;
+}
+
+// Portal Nav
+.lv-navibar {
+  background-color: $mdc-theme-primary;
+  color: $lv-default-color;
+  height: $lv-default-navbar-height;
+  font-size: $lv-default-font-size;
+  font-family: $lv-default-font-family;
+}
+
+.lv-footer {
+  background-color: $mdc-theme-primary;
+  color: $lv-default-color;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: $lv-default-footer-height;
+  text-align: center;
+  font-size: $lv-footer-font-size;
+  font-family: $lv-default-font-family;
+}
+
+.lv-brand {
+  background-color: $mdc-theme-primary;
+  font-family: $lv-default-font-family;
+}
+
+.lv-spacer {
+  flex: 1 auto;
+}
+
+.lv-sidebar {
+  background-color: $mdc-theme-secondary !important;
+  width: $lv-sidebar-width;
+  font-family: $lv-default-font-family;
+}
+
+.lv-sidebar-panel {
+  background-color: darken($color: $lv-default-color, $amount: 5);
+  color: $lv-secondary-color;
+}
+
+.lv-sidebar-menu {
+  width: 100%;
+  background-color: $mdc-theme-secondary !important;
+  font-family: $lv-default-font-family;
+  font-size: $lv-default-font-size;
+  font-style: bold;
+  color: $lv-default-color !important;
+
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li a {
+    display: block;
+    color: #000;
+    padding: 0.5em 2em;
+    text-decoration: none;
+  }
+
+  /* Change the link color on hover */
+  li a:hover {
+    background-color: #555;
+    color: white;
+  }
+}
+
+.lv-sidebar-menu-text {
+  color: whitesmoke;
+}
+
+.lv-sidebar-menu-text:hover {
+  color: $lv-default-color;
+}
+
+.lv-sidebar-bottom {
+  border-top: 1 solid;
+  border-top-color: $lv-default-color !important;
+  margin-bottom: 0;
+}
+
+// Form
+.lv-dialog-form {
+  position: relative;
+  height: 90%;
+}
+
+.lv-dialog-actions {
+  position: absolute;
+  bottom: 1em;
+  width: 100%;
+}
+
+
+
+
+// Toolbar Button Style
+.lv-toolbar-btn {
+  padding: 0 15px;
+  color: $lv-default-color !important;
+}
+
+.lv-expansion {
+  margin-top: $lv-toolbar-height !important;
+}
+
+.lv-expansion .mat-expansion-panel-header-title,
+.lv-expansion .mat-expansion-panel-header-description {
+  flex-basis: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Grid Style */
+
+.lv-search-table {
+  width: 100%;
+}
+
+.lv-search-bar {
+  width: 18em;
+}
+
+.lv-table-container {
+  position: relative;
+  width: 100%;
+  height: 98.75%;
+  background-color: $lv-background-color;
+  bottom: 0;
+
+  table {
+    width: 100%;
+
+    th {
+      background-color: darken($color:$mdc-theme-primary-light, $amount: 10);
+      text-transform: uppercase;
+    }
+
+    tr:hover {
+      background-color: lighten($color: $lv-default-color, $amount: 20);
+    }
+  }
+}
+
+
+.lv-table-container-embeded {
+  min-width: 100%;
+  min-height: 50%;
+  bottom: 0;
+}
+
+
+.lv-table-footer__row {
+  background-color: lighten($color: $lv-indigo-color, $amount: 50);
+  color: $lv-default-color;
+  font-weight: bold;
+}
+
+.lv-table-footer__row:hover {
+  background-color: lighten($color: $lv-indigo-color, $amount: 40) !important;
+}
+
+.lv-table-toolbar {
+  position: relative;
+  min-height: 64px;
+}
+
+.lv-footer-toolbar {
+  position: relative;
+  bottom: 0.75em !important;
+  width: 100%;
+  text-align: left;
+}
+
+.lv-page-bottom-toolbar {
+  position: absolute;
+  bottom: 1.5em;
+  left: 1.5em;
+}
+
+.lv-default-tile {
+  background-color: $lv-background-color;
+}
+
+.lv-logo-image {
+  height: 15em;
+  // margin-top: 4em;
+  // background-image: url('~/assets/images/oryx.svg');
+  background-repeat: no-repeat;
+  background-size: 250px 250px;
+  background-position: center;
+}
+
+.lv-form-field {
+  margin-top: 2em;
+  padding: 0.125em 0.125em !important;
+  width: max-content;
+  min-width: 32.58%;
+}
+
+.lv-password-recovery-container {
+  min-height: 15em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lv-textarea-field {
+  width: 100%;
+  margin: 2px 5px !important;
+}
+
+.lv-tab-group {
+  //border: 0.5px solid $mdc-theme-primary-light;
+  min-height: 440px;
+}
+
+/**Card*/
+
+.lv-card {
+  width: auto;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.lv-card-list {
+  ul {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1em;
+  }
+}
+
+.lv-full-width-card {
+  width: 100% !important;
+}
+
+/*Button Style*/
+
+.lv-btn-primary {
+  background: $lv-primary-color;
+  width: $lv-btn-default-width;
+  color: $lv-default-color !important;
+  font-size: $lv-default-font-size;
+  font-family: $lv-default-font-family;
+  border-radius: 0 !important;
+  margin: 5px !important;
+}
+
+.lv-btn-accent {
+  background: $lv-secondary-color;
+  width: $lv-btn-default-width;
+  color: $lv-default-color !important;
+  font-size: $lv-default-font-size;
+  font-family: $lv-default-font-family;
+  border-radius: 0 !important;
+  margin: 5px !important;
+}
+
+.lv-item-align-center {
+  text-align: center;
+}
+
+.lv-btn-default {
+  background: lighten($color: $lv-secondary-color, $amount: 10);
+  font-size: $lv-default-font-size;
+  font-family: $lv-default-font-family;
+  color: $lv-default-font-color;
+  border-radius: 0.25em;
+  width: $lv-btn-default-width;
+  height: 3.5em;
+  margin-left: 0 !important;
+  margin-right: 0.25em;
+}
+
+.lv-btn-default:last-child {
+  margin-right: 0;
+}
+
+.lv-btn-default:hover {
+  background: $lv-primary-color;
+  color: $lv-link-hover-color !important;
+  transition: 0.25s;
+}
+
+.lv-login-btn {
+  background: $lv-secondary-color;
+  width: $lv-btn-login-width;
+  color: $lv-default-color !important;
+  font-size: $lv-default-font-size;
+  font-family: $lv-default-font-family;
+  border-radius: 0 !important;
+  margin: 5px 5px !important;
+}
+
+.lv-login-btn:hover {
+  background: $lv-primary-color;
+  color: $lv-link-hover-color !important;
+}
+
+.lv-card-btn {
+  background: $lv-secondary-color;
+  font-size: $lv-default-font-size;
+  font-family: $lv-default-font-family;
+  color: $lv-secondary-color;
+  border-radius: 0 !important;
+  width: 8em;
+  margin: 0px 5px !important;
+}
+
+.lv-fab-container {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  z-index: 100;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+
+  >div {
+    display: flex;
+    flex-direction: column-reverse;
+    align-content: center;
+
+    button {
+      align-self: center;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.lv-fab-btn {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 1.5rem;
+}
+
+
+/* Link*/
+
+.lv-link-default {
+  color: $lv-background-color;
+}
+
+.lv-link-default:hover {
+  color: $lv-primary-color !important;
+}
+
+/*Oryx Input Text Style */
+
+.lv-input-text {
+  max-width: $lv-input-text-default-width;
+  width: 100%;
+  font-family: $lv-default-font-family !important;
+  margin: 1em 5px;
+  align-self: center;
+}
+
+.lv-loader-overlay {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.lv-notification {
+  color: $lv-default-color;
+  font-size: $lv-default-font-size;
+  font-family: $lv-default-font-family;
+}
+
+//Dialog Style
+.lv-default-dialog-content {
+  width: 100%;
+  min-height: 83%;
+  height: 83%;
+  overflow: hidden;
+  position: relative;
+}
+
+.lv-medium-dialog-content {
+  height: 17em;
+}
+
+//Dialog Style
+.lv-search-dialog {
+  min-height: 250px !important;
+}
+
+// Checkbox
+.lv-checkbox {
+  display: inline-block;
+  width: 32.58%;
+  max-width: 33.33%;
+  text-align: right;
+}
+
+.lv-error-page-layout {
+  position: relative;
+  background-color: $mdc-theme-primary-light;
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lv-error-message {
+  color: red;
+  font-weight: bold;
+}
+
+//Breadcrumb
+.lv-breadcrumb li {
+  display: inline;
+}
+
+.lv-breadcrumb li+li :before {
+  content: "/";
+  color: $lv-link-hover-color;
+}
+
+.lv-breadcrumb {
+  padding: 20px;
+
+  a {
+    color: $lv-default-color;
+  }
+}
+
+.lv-table-caption {
+  caption-side: top;
+  text-align: end;
+  padding-right: 0.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.lv-table-bottom-caption {
+  caption-side: bottom;
+  text-align: end;
+  padding-right: 0.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+
+@media(min-width: 1024px) {
+  .lv-fab-btn {
+    bottom: 2rem;
+    right: 1.5rem;
+  }
+}
+
+/**
+ Mobile Screen
+*/
+
+@media(max-width: $lv-mobile-break-point) {
+  .lv-fab-btn {
+    zoom: 75%;
+    position: fixed;
+    bottom: 2.2rem;
+    right: 1rem;
+  }
+
+  .lv-fab-container {
+    >div {
+      button {
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+
+  .lv-fab-btn-group {
+    zoom: 75%;
+    position: fixed;
+    bottom: 6rem;
+    right: 1.5rem;
+  }
+
+  .lv-btn-default {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0.25em;
+    width: 100%;
+  }
+
+  .lv-input-text {
+    max-width: 100%;
+    width: auto;
+    font-family: $lv-default-font-family !important;
+    align-self: center !important;
+  }
+
+  .lv-form-field {
+    width: auto;
+    min-width: 100%;
+    overflow: hidden;
+  }
+
+  .lv-breadcrumb {
+    display: none;
+  }
+
+  .lv-dialog-actions {
+    position: relative;
+  }
+
+  .lv-page-bottom-toolbar {
+    position: relative;
+    padding: 1.5em 1.5em;
+    width: auto;
+    background-color: $lv-background-color;
+  }
+
+}
+
+/** Card list mobile view */
+@media screen and (max-width: $lv-mobile-break-point) {
+  .lv-card-list ul {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+
+  .lv-page-bottom-toolbar {
+    width: initial;
+    bottom: 1em !important;
+    left: 0;
+  }
+
+  .lv-page-bottom-toolbar__items {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+
+@media screen and (min-width: $lv-mobile-break-point) and (max-width: $lv-default-screen-size) {
+  .lv-card-list ul {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}

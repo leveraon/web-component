@@ -1,0 +1,23 @@
+{
+  "name": "@leveraon/ui",
+  "version": "1.0.0",
+  "author": "Leveraon Inc",
+  "homepage": "https://www.leveraon.com",
+  "license": "Leveraon Inc",
+  "publishConfig": {
+    "registry": "http://192.168.0.210:4873/"
+  },
+  "contributors": [
+    "Yu Sang"
+  ],
+  "exports": {
+
+  },
+  "peerDependencies": {
+    "@angular/common": "^13.3.0",
+    "@angular/core": "^13.3.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}
