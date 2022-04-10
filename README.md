@@ -3,7 +3,6 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
 
 ## Run story book
-    Run `bash link-libs4-storybook.sh` to link all compiled libraries.
     Run `bash run-storybook.sh` to open storybook page.
 
 ## Development server

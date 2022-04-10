@@ -16,10 +16,12 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     FormsModule
   ],
   exports: [
-    ButtonComponent
+    ButtonComponent,
+    NavbarComponent,
+    SearchBarComponent
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ]
 })
-export class UiModule { }
+export class UIModule { }

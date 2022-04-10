@@ -11,7 +11,7 @@ export const parameters = {
     },
   },
   docs: { inlineStories: true },
-}
+};
 
 export const decorators = [
   (storyFunc) => {

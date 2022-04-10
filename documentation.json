@@ -71,7 +71,7 @@
         },
         {
             "name": "NavbarComponent",
-            "id": "component-NavbarComponent-cd0bb407e341ae8636a3b69734ecf3fe9f99eb16caa6bdceff77ca951457f85773a9621c5b973c24a9ead47903aafd33ac5349ea065205c1227aae3e92b0b38a",
+            "id": "component-NavbarComponent-c3ea64d1f9ffa694f3fa1077674a1aac302820afb4a09fc9e769c5522afec7873715d0b5bdcb9f81499a0d577e06c0e4a448f95508dc3f835b5d8005e3fcae22",
             "file": "projects/ui/src/lib/navbar/navbar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -100,6 +100,34 @@
                     "line": 12,
                     "deprecated": false,
                     "deprecationMessage": ""
+                },
+                {
+                    "name": "searchContent",
+                    "args": [
+                        {
+                            "name": "$event",
+                            "type": "",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "$event",
+                            "type": "",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 }
             ],
             "deprecated": false,
@@ -109,7 +137,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lv-navbar',\n  templateUrl: './navbar.component.html',\n  styleUrls: ['./navbar.component.scss']\n})\nexport class NavbarComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lv-navbar',\n  templateUrl: './navbar.component.html',\n  styleUrls: ['./navbar.component.scss']\n})\nexport class NavbarComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  searchContent($event): void {\n    console.log('searching ...', $event);\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -129,19 +157,110 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n    <div class=\"container-fluid\">\n        <a class=\"navbar-brand\" href=\"#\">Navbar</a>\n        <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\"\n            aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n        </button>\n        <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n            <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">\n                <li class=\"nav-item\">\n                    <a class=\"nav-link active\" aria-current=\"page\" href=\"#\">Home</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"#\">Link</a>\n                </li>\n                <li class=\"nav-item dropdown\">\n                    <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\"\n                        data-bs-toggle=\"dropdown\" aria-expanded=\"false\">\n                        Dropdown\n                    </a>\n                    <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n                        <li><a class=\"dropdown-item\" href=\"#\">Action</a></li>\n                        <li><a class=\"dropdown-item\" href=\"#\">Another action</a></li>\n                        <li>\n                            <hr class=\"dropdown-divider\">\n                        </li>\n                        <li><a class=\"dropdown-item\" href=\"#\">Something else here</a></li>\n                    </ul>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link disabled\">Disabled</a>\n                </li>\n            </ul>\n            <form class=\"d-flex\">\n                <input class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\n                <button class=\"btn btn-outline-success\" type=\"submit\">Search</button>\n            </form>\n        </div>\n    </div>\n</nav>"
+            "templateData": "<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n    <div class=\"container-fluid\">\n        <a class=\"navbar-brand\" href=\"#\">Navbar</a>\n        <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\"\n            aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n        </button>\n        <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n            <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">\n                <li class=\"nav-item\">\n                    <a class=\"nav-link active\" aria-current=\"page\" href=\"#\">Home</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"#\">Link</a>\n                </li>\n                <li class=\"nav-item dropdown\">\n                    <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\"\n                        data-bs-toggle=\"dropdown\" aria-expanded=\"false\">\n                        Dropdown\n                    </a>\n                    <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\n                        <li><a class=\"dropdown-item\" href=\"#\">Action</a></li>\n                        <li><a class=\"dropdown-item\" href=\"#\">Another action</a></li>\n                        <li>\n                            <hr class=\"dropdown-divider\">\n                        </li>\n                        <li><a class=\"dropdown-item\" href=\"#\">Something else here</a></li>\n                    </ul>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link disabled\">Disabled</a>\n                </li>\n            </ul>\n            <lv-search-bar (search)=\"searchContent($event)\"></lv-search-bar>\n        </div>\n    </div>\n</nav>"
+        },
+        {
+            "name": "SearchBarComponent",
+            "id": "component-SearchBarComponent-b7efb7c9ee2df871e7714b118ebb078877ffc0d22301fcea28e2fbf14fd31ed84a9f4f7184ce46527d66335891c95412f850164741218fa743546ec71452ddde",
+            "file": "projects/ui/src/lib/search-bar/search-bar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lv-search-bar",
+            "styleUrls": [
+                "./search-bar.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./search-bar.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "search",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "EventEmitter<String>"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "searchText",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "clickSearch",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'lv-search-bar',\n  templateUrl: './search-bar.component.html',\n  styleUrls: ['./search-bar.component.scss']\n})\nexport class SearchBarComponent implements OnInit {\n\n  searchText: string;\n\n  @Output()\n  search: EventEmitter<String> = new EventEmitter();\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  clickSearch(): void {\n    this.search.emit(this.searchText);\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./search-bar.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 13
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"d-flex\">\n    <input class=\"form-control me-2\" placeholder=\"Search\" aria-label=\"Search\" [(ngModel)]=\"searchText\">\n    <button class=\"btn btn-outline-success\" type=\"button\" (click)=\"clickSearch()\">Search</button>\n</div>"
         }
     ],
     "modules": [
         {
-            "name": "UiModule",
-            "id": "module-UiModule-22656db51620ff5302518073bc792c7d89c3376a6caaa270aa2d0746e8458bf6457779c5e258472d91957ba6ffa26b2219229b6644b335504fddde6187404462",
+            "name": "UIModule",
+            "id": "module-UIModule-5bddea0a3c924b881b3dd9668f57be443425b4bf33c94f76fb58e73e219030600f59def9ca4d50a79bbcac2ba544dba9b14a8615b3baea8fc68d6e53bd96faec",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/ui/src/lib/ui.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { ButtonComponent } from './button/button.component';\nimport { NavbarComponent } from './navbar/navbar.component';\n\n\n\n@NgModule({\n  declarations: [\n    ButtonComponent,\n    NavbarComponent\n  ],\n  imports: [\n  ],\n  exports: [\n    ButtonComponent\n  ]\n})\nexport class UiModule { }\n",
+            "sourceCode": "import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';\nimport { FormsModule } from '@angular/forms';\nimport { ButtonComponent } from './button/button.component';\nimport { NavbarComponent } from './navbar/navbar.component';\nimport { SearchBarComponent } from './search-bar/search-bar.component';\n\n\n\n@NgModule({\n  declarations: [\n    ButtonComponent,\n    NavbarComponent,\n    SearchBarComponent\n  ],\n  imports: [\n    FormsModule\n  ],\n  exports: [\n    ButtonComponent,\n    NavbarComponent,\n    SearchBarComponent\n  ],\n  schemas: [\n    CUSTOM_ELEMENTS_SCHEMA\n  ]\n})\nexport class UIModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -155,6 +274,9 @@
                         },
                         {
                             "name": "NavbarComponent"
+                        },
+                        {
+                            "name": "SearchBarComponent"
                         }
                     ]
                 },
@@ -167,6 +289,12 @@
                     "elements": [
                         {
                             "name": "ButtonComponent"
+                        },
+                        {
+                            "name": "NavbarComponent"
+                        },
+                        {
+                            "name": "SearchBarComponent"
                         }
                     ]
                 },
@@ -214,6 +342,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/UI Stories/SearchBarComponent.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -241,6 +379,16 @@
                 "deprecationMessage": "",
                 "type": "Story<NavbarComponent>",
                 "defaultValue": "(args: NavbarComponent) => ({\n    component: NavbarComponent,\n    props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/UI Stories/SearchBarComponent.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SearchBarComponent>",
+                "defaultValue": "(args: SearchBarComponent) => ({\n    component: SearchBarComponent,\n    props: args,\n})"
             }
         ],
         "functions": [],
@@ -311,6 +459,28 @@
                     "type": "Story<NavbarComponent>",
                     "defaultValue": "(args: NavbarComponent) => ({\n    component: NavbarComponent,\n    props: args,\n})"
                 }
+            ],
+            "stories/UI Stories/SearchBarComponent.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/UI Stories/SearchBarComponent.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/UI Stories/SearchBarComponent.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<SearchBarComponent>",
+                    "defaultValue": "(args: SearchBarComponent) => ({\n    component: SearchBarComponent,\n    props: args,\n})"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -337,7 +507,16 @@
                 "linktype": "component",
                 "name": "NavbarComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ui/src/lib/search-bar/search-bar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SearchBarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -392,6 +571,26 @@
             },
             {
                 "filePath": "stories/UI Stories/NavbarComponent.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/UI Stories/SearchBarComponent.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/UI Stories/SearchBarComponent.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
