@@ -1,7 +1,8 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/ui-foundation",
+  "dest": "../../dist/foundation",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": ["@leveraon/foundation"]
 }
