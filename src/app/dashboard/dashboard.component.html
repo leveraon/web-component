@@ -21,7 +21,9 @@
       <button mat-icon-button (click)="toggleSideNav()">
         <mat-icon>menu</mat-icon>
       </button>
-      <span>Dashboard</span>
+      <span>{{
+        currentComponentPath === "" ? "dashboard" : currentComponentPath
+      }}</span>
       <span class="toolbar-spacer"></span>
       <button mat-icon-button>
         <mat-icon>share</mat-icon>

@@ -33,6 +33,7 @@ export class DashboardComponent {
 
   router: Router = inject(Router);
   private readonly route = inject(ActivatedRoute);
+  currentComponentPath = '';
 
   events: string[] = [];
   opened: boolean = false;
@@ -43,6 +44,7 @@ export class DashboardComponent {
   }
 
   navigateTo(path: string): void {
+    this.currentComponentPath = path;
     this.router.navigate([`${path}`], { relativeTo: this.route });
     this.toggleSideNav();
   }
