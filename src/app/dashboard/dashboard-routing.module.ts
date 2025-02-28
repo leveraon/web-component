@@ -4,22 +4,16 @@ import { DashboardComponent } from './dashboard.component';
 
 export const CHILD_ROUTES: Routes = [
   {
-    path: 'dashboard',
+    path: '',
     component: DashboardComponent,
     children: [
-      {
-        path: '',
-        redirectTo: 'accordion',
-        pathMatch: 'full',
-        outlet: 'dashboard',
-      },
       {
         path: 'accordion',
         loadComponent: () =>
           import('../accordion-example/accordion-example.component').then(
             (c) => c.AccordionExampleComponent
           ),
-        outlet: 'dashboard',
+        outlet: 'child',
       },
     ],
   },
