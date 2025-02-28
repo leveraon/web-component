@@ -14,6 +14,15 @@ const ROOT_ROUTES: Routes = [
       import('./dashboard/dashboard.component').then(
         (c) => c.DashboardComponent
       ),
+    children: [
+      {
+        path: 'accordion',
+        loadComponent: () =>
+          import('./accordion-example/accordion-example.component').then(
+            (c) => c.AccordionExampleComponent
+          ),
+      },
+    ],
   },
   { path: '**', component: NotFoundComponent },
 ];

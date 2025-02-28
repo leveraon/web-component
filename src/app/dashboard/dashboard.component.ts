@@ -9,7 +9,6 @@ import { MatListModule } from '@angular/material/list';
 import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
-import { DashboardRoutingModule } from './dashboard-routing.module';
 
 @Component({
   selector: 'app-dashboard',
@@ -24,7 +23,6 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
-    DashboardRoutingModule,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
@@ -46,5 +44,6 @@ export class DashboardComponent {
 
   navigateTo(path: string): void {
     this.router.navigate([`${path}`], { relativeTo: this.route });
+    this.toggleSideNav();
   }
 }
