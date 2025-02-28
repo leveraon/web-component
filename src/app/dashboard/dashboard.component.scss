@@ -1,0 +1,18 @@
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.search-bar-input {
+  width: 100%;
+}
+
+.drawer-container {
+  height: 100vh;
+}
+
+mat-list-item {
+  button {
+    @extend .search-bar-input;
+    text-transform: uppercase;
+  }
+}

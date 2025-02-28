@@ -1,1 +1,35 @@
-<lv-accordion></lv-accordion>
+<mat-drawer-container>
+  <mat-drawer mode="side" #sidenav>
+    <mat-list role="list">
+      <div mat-list-item>
+        <mat-form-field class="search-bar-input">
+          <mat-label>Search Component</mat-label>
+          <input matInput placeholder="Ex. Accordion" />
+        </mat-form-field>
+      </div>
+      @for (path of paths; track $index) {
+      <mat-list-item role="listitem">
+        <button mat-button (click)="navigateTo(path)">
+          {{ path }}
+        </button>
+      </mat-list-item>
+      }
+    </mat-list>
+  </mat-drawer>
+  <mat-drawer-content class="drawer-container">
+    <mat-toolbar>
+      <button mat-icon-button (click)="toggleSideNav()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Dashboard</span>
+      <span class="toolbar-spacer"></span>
+      <button mat-icon-button>
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet name="dashboard" />
+  </mat-drawer-content>
+</mat-drawer-container>
