@@ -16,10 +16,10 @@ const ROOT_ROUTES: Routes = [
       ),
     children: [
       {
-        path: 'accordion',
+        path: 'renderer',
         loadComponent: () =>
-          import('./accordion-example/accordion-example.component').then(
-            (c) => c.AccordionExampleComponent
+          import('./component-renderer/component-renderer.component').then(
+            (c) => c.ComponentRendererComponent
           ),
       },
     ],

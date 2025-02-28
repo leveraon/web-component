@@ -37,15 +37,22 @@ export class DashboardComponent {
 
   events: string[] = [];
   opened: boolean = false;
-  paths = ['accordion', 'test'];
+  paths = [
+    {
+      name: 'renderer',
+      tag: 'accordion',
+    },
+  ];
 
   toggleSideNav(): void {
     this.sidenav.toggle();
   }
 
-  navigateTo(path: string): void {
+  navigateTo(path: string, tag: string): void {
     this.currentComponentPath = path;
-    this.router.navigate([`${path}`], { relativeTo: this.route });
+    this.router.navigate([`${path}`, { tag: tag }], {
+      relativeTo: this.route,
+    });
     this.toggleSideNav();
   }
 }

@@ -9,8 +9,8 @@
       </div>
       @for (path of paths; track $index) {
       <mat-list-item role="listitem">
-        <button mat-button (click)="navigateTo(path)">
-          {{ path }}
+        <button mat-button (click)="navigateTo(path.name, path.tag)">
+          {{ path.tag }}
         </button>
       </mat-list-item>
       }
