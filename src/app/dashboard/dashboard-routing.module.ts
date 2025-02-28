@@ -2,11 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 
-export const childRoutes: Routes = [
+export const CHILD_ROUTES: Routes = [
   {
-    path: '',
+    path: 'dashboard',
     component: DashboardComponent,
     children: [
+      {
+        path: '',
+        redirectTo: 'accordion',
+        pathMatch: 'full',
+        outlet: 'dashboard',
+      },
       {
         path: 'accordion',
         loadComponent: () =>
@@ -20,7 +26,7 @@ export const childRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(childRoutes)],
+  imports: [RouterModule.forChild(CHILD_ROUTES)],
   exports: [RouterModule],
 })
 export class DashboardRoutingModule {}

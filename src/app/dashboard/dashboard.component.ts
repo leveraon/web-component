@@ -2,14 +2,14 @@ import { Component, inject, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
 import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { Router, RouterModule, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { DashboardRoutingModule } from './dashboard-routing.module';
-import { MatListModule } from '@angular/material/list';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,12 +20,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatSidenavModule,
     MatCheckboxModule,
     FormsModule,
-    RouterModule,
     RouterOutlet,
-    DashboardRoutingModule,
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
+    DashboardRoutingModule,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
@@ -35,16 +34,17 @@ export class DashboardComponent {
   @ViewChild(MatDrawer) sidenav!: MatDrawer;
 
   router: Router = inject(Router);
+  private readonly route = inject(ActivatedRoute);
 
   events: string[] = [];
   opened: boolean = false;
-  paths = ['accordion'];
+  paths = ['accordion', 'test'];
 
   toggleSideNav(): void {
     this.sidenav.toggle();
   }
 
   navigateTo(path: string): void {
-    this.router.navigate([`dashboard/${path}`]);
+    this.router.navigate([`${path}`], { relativeTo: this.route });
   }
 }
